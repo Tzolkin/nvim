@@ -1,0 +1,21 @@
+ {
+  "solargraph.formatting": true,
+  "solargraph.references": true,
+  "solargraph.definitions": true,
+  "solargraph.rename": true,
+  "solargraph.folding": true,
+  "solargraph.symbols": true,
+  "solargraph.diagnostics": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expandOrCollapse", "open"],
+    "s": "open:vsplit",
+    "i": "open:split"
+  }
+}
+
