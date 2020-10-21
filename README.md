@@ -5,7 +5,7 @@
 ```bash
 $ brew install nvim
 $ mkdir ~/.config && cd ~/.config
-$ git clone git@github.com:tolerantx/nvim.git
+$ git clone https://github.com/Tzolkin/nvim.git
 $ brew install fzf
 $ brew install ripgrep
 $ gem install solargraph
