@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf (Control+p)
   Plug 'junegunn/fzf.vim'
-  Plug 'chriskempson/base16-vim'                      " Colorscheme
+  " Plug 'chriskempson/base16-vim'                      " Colorscheme
   Plug 'vim-scripts/vim-gitgutter'
   Plug 'APZelos/blamer.nvim'
   Plug 'Yggdroot/indentLine'

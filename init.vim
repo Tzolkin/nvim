@@ -19,7 +19,7 @@ set hlsearch                    " Highlight found searches
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
 set ttyfast
-set lazyredraw          	      " Wait to redraw "
+set lazyredraw                  " Wait to redraw "
 
 set ts=2                        " Tabs are 2 spaces
 set bs=2                        " Backspace over everything in insert mode
@@ -29,6 +29,19 @@ set smarttab
 set expandtab
 set virtualedit=all
 set showmatch                   " Show matching brackets.
+set clipboard+=unnamedplus
+let g:clipboard = {
+          \   'name': 'win32yank-wsl',
+          \   'copy': {
+          \      '+': 'win32yank.exe -i --crlf',
+          \      '*': 'win32yank.exe -i --crlf',
+          \    },
+          \   'paste': {
+          \      '+': 'win32yank.exe -o --lf',
+          \      '*': 'win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 0,
+          \ }
 
 " Go to Normal mode
 imap ;; <ESC>
@@ -65,9 +78,9 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
 " Rg (Search)
-nnoremap <C-S-f> :Rg<SPACE>
-inoremap <C-S-f> <Esc>:Rg<SPACE>
-nnoremap <leader>ff :Rg <C-R>=expand("<cword>")<CR><CR>
+"nnoremap <C-S-f> :Rg<SPACE>
+"inoremap <C-S-f> <Esc>:Rg<SPACE>
+"nnoremap <leader>ff :Rg <C-R>=expand("<cword>")<CR><CR>
 
 " Move to splits
 map <C-S-Up> :wincmd k<CR>
@@ -96,10 +109,12 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#displayed_head_limit = 10
 
 " Colorscheme
-colorscheme base16-default-dark
+"colorscheme base16-default-dark
 let base16colorspace=256
 set termguicolors
 " colorscheme jellybeans
+colorscheme NeoSolarized
+set background=dark
 
 " Highlight line
 set cursorline
@@ -108,7 +123,7 @@ set cursorline
 " hi! vertsplit guifg=fg guibg=bg
 
 " Color column
-set colorcolumn=80
+set colorcolumn=100
 
 " Remove trailing white spaces
 autocmd BufWritePre * %s/\s\+$//e

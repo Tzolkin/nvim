@@ -1,6 +1,6 @@
 # nvim
 
-## Installation (Mac)
+## Installation (Mac - WSL)
 
 ```bash
 $ brew install nvim
@@ -17,7 +17,10 @@ $ gem install solargraph
 : PlugInstall
 ```
 
-### Install new fonts
+### NVIM clipboard unnamedplus
+https://superuser.com/a/1557751
+
+### Install new fonts (not apply for WSL)
 
 ```bash
 $ brew tap homebrew/cask-fonts
