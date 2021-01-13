@@ -42,6 +42,10 @@ let g:clipboard = {
           \   },
           \   'cache_enabled': 0,
           \ }
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 " Go to Normal mode
 imap ;; <ESC>
@@ -78,9 +82,9 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
 " Rg (Search)
-"nnoremap <C-S-f> :Rg<SPACE>
-"inoremap <C-S-f> <Esc>:Rg<SPACE>
-"nnoremap <leader>ff :Rg <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-S-f> :Rg<SPACE>
+inoremap <C-S-f> <Esc>:Rg<SPACE>
+nnoremap <leader>ff :Rg <C-R>=expand("<cword>")<CR><CR>
 
 " Move to splits
 map <C-S-Up> :wincmd k<CR>
@@ -101,12 +105,19 @@ let g:blamer_template = '<author> • <committer-time> • <summary>'
 let g:blamer_show_in_visual_modes = 0
 
 " Vim-Gitgutter
-let g:gitgutter_realtime = 0
+" let g:gitgutter_realtime = 0
 
 " Airline
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#displayed_head_limit = 10
+
+" Better tab experience - from https://webdevetc.com/
+map <leader>tn :tabnew<cr>
+map <leader>t<leader> :tabnext
+map <leader>tm :tabmove
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
 
 " Colorscheme
 "colorscheme base16-default-dark
@@ -115,6 +126,7 @@ set termguicolors
 " colorscheme jellybeans
 colorscheme NeoSolarized
 set background=dark
+set guifont=Hack:12
 
 " Highlight line
 set cursorline
@@ -123,7 +135,7 @@ set cursorline
 " hi! vertsplit guifg=fg guibg=bg
 
 " Color column
-set colorcolumn=100
+set colorcolumn=120
 
 " Remove trailing white spaces
 autocmd BufWritePre * %s/\s\+$//e
@@ -177,6 +189,8 @@ let g:startify_custom_header = [
   \ '   |  |\   | |  |____ |  `--   |    \    /    |  | |  |  |  |',
   \ '   |__| \__| |_______| \______/      \__/     |__| |__|  |__|',
   \ ]
+
+
 
 source $HOME/.config/nvim/vim-plug/nerdtree.conf.vim
 source $HOME/.config/nvim/vim-plug/coc.conf.vim
